@@ -5,6 +5,7 @@ ferguson8max@gmail.com
 https://github.com/uchimata-ftw
 */
 
+#include <iostream>
 #include <string>
 #include <fstream>
 using namespace std;
@@ -80,14 +81,30 @@ do {
                     << "Total Value: $"<< nameValue << endl;
           outStream.close();
     }
-      else if (typeOfAlcohol == "other"){
-          outStream.open("other.txt", ios::app);
+      else if (typeOfAlcohol == "gin"){
+          outStream.open("gin.txt", ios::app);
           outStream << "\nName: " << nameOfAlcohol << endl
                     << "Total Units: "<< numberBottles << endl
                     << "Price $"<< priceOfBottle << endl
                     << "Total Value: $"<< nameValue << endl;
           outStream.close();
     }
+    else if (typeOfAlcohol == "wine"){
+        outStream.open("wine.txt", ios::app);
+        outStream << "\nName: " << nameOfAlcohol << endl
+                  << "Total Units: "<< numberBottles << endl
+                  << "Price $"<< priceOfBottle << endl
+                  << "Total Value: $"<< nameValue << endl;
+        outStream.close();
+  }
+  else if (typeOfAlcohol == "other"){
+      outStream.open("other.txt", ios::app);
+      outStream << "\nName: " << nameOfAlcohol << endl
+                << "Total Units: "<< numberBottles << endl
+                << "Price $"<< priceOfBottle << endl
+                << "Total Value: $"<< nameValue << endl;
+      outStream.close();
+}
 
 /* Keeps track of entire stocks value */
     totalValue = nameValue + totalValue;
