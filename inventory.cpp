@@ -1,4 +1,10 @@
-#include <iostream>
+/*
+Inventory management software
+Written by Max Ferguson
+ferguson8max@gmail.com
+https://github.com/uchimata-ftw
+*/
+
 #include <string>
 #include <fstream>
 using namespace std;
@@ -15,7 +21,7 @@ int main(){
     ifstream inStream;
     ofstream outStream;
 
-
+/* Enter Inventory */
 do {
     cout << "What type of alcohol are you counting? ";
     cin >> typeOfAlcohol;
@@ -26,9 +32,10 @@ do {
     cout << "\nHow many bottles do you have? ";
     cin >> numberBottles;
 
+/* Keep a running total of individual stocks value */
     nameValue = priceOfBottle * numberBottles;
 
-
+/* Sorts by alcohol type and writes to text file */
       if (typeOfAlcohol == "vodka"){
           outStream.open("vodka.txt", ios::app);
           outStream << "\nName: " << nameOfAlcohol << endl
@@ -81,15 +88,20 @@ do {
                     << "Total Value: $"<< nameValue << endl;
           outStream.close();
     }
+
+/* Keeps track of entire stocks value */
     totalValue = nameValue + totalValue;
+
     cout << "Continue input? y/n ";
     cin >> choice;
 
 } while ( choice == "y" || choice == "Y");
 
+/* Writes out total stock value to its own text file */
   outStream.open("totalValue.txt");
   outStream << "\nTotal value of all inventory: $"<< totalValue;
   outStream.close();
+
   return 0;
 
 }
