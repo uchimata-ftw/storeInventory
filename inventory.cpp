@@ -11,11 +11,12 @@ https://github.com/uchimata-ftw
 using namespace std;
 
 int main(){
-
+/* Sets maximum number of decimal values to 2 */
     cout.setf(ios::fixed);
     cout.setf(ios::showpoint);
     cout.precision(2);
 
+/* Initialize Variables */
     string choice = "N";
     string typeOfAlcohol, nameOfAlcohol;
     float priceOfBottle, nameValue, numberBottles, totalValue;
@@ -43,9 +44,8 @@ do {
                     <<"Total Bottles: "<< numberBottles << endl
                     <<"Price: $"<< priceOfBottle << endl
                     <<"Total Value: $"<< nameValue << endl;
-                    outStream.close();
-
-                  }
+          outStream.close();
+        }
 
       else if (typeOfAlcohol == "whiskey"){
           outStream.open("whiskey.txt", ios::app);
@@ -54,7 +54,7 @@ do {
                     << "Price: $"<< priceOfBottle << endl
                     << "Total Value: $"<< nameValue << endl;
           outStream.close();
-    }
+      }
 
       else if (typeOfAlcohol == "rum"){
           outStream.open("rum.txt", ios::app);
@@ -63,7 +63,7 @@ do {
                     << "Price: $"<< priceOfBottle << endl
                     << "Total Value: $"<< nameValue << endl;
           outStream.close();
-    }
+      }
 
       else if (typeOfAlcohol == "tequila"){
           outStream.open("tequila.txt, ios::app");
@@ -71,8 +71,9 @@ do {
                     << "Total Bottles: "<< numberBottles << endl
                     << "Price: $"<< priceOfBottle << endl
                     << "Total Value: $"<< nameValue << endl;
-                    outStream.close();
-    }
+          outStream.close();
+      }
+
       else if (typeOfAlcohol == "beer"){
           outStream.open("beer.txt", ios::app);
           outStream << "\nName: " << nameOfAlcohol << endl
@@ -80,7 +81,8 @@ do {
                     << "Price $"<< priceOfBottle << endl
                     << "Total Value: $"<< nameValue << endl;
           outStream.close();
-    }
+      }
+
       else if (typeOfAlcohol == "gin"){
           outStream.open("gin.txt", ios::app);
           outStream << "\nName: " << nameOfAlcohol << endl
@@ -88,7 +90,8 @@ do {
                     << "Price $"<< priceOfBottle << endl
                     << "Total Value: $"<< nameValue << endl;
           outStream.close();
-    }
+      }
+
     else if (typeOfAlcohol == "wine"){
         outStream.open("wine.txt", ios::app);
         outStream << "\nName: " << nameOfAlcohol << endl
@@ -96,15 +99,16 @@ do {
                   << "Price $"<< priceOfBottle << endl
                   << "Total Value: $"<< nameValue << endl;
         outStream.close();
+    }
+
+    else if (typeOfAlcohol == "other"){
+        outStream.open("other.txt", ios::app);
+        outStream << "\nName: " << nameOfAlcohol << endl
+                  << "Total Units: "<< numberBottles << endl
+                  << "Price $"<< priceOfBottle << endl
+                  << "Total Value: $"<< nameValue << endl;
+        outStream.close();
   }
-  else if (typeOfAlcohol == "other"){
-      outStream.open("other.txt", ios::app);
-      outStream << "\nName: " << nameOfAlcohol << endl
-                << "Total Units: "<< numberBottles << endl
-                << "Price $"<< priceOfBottle << endl
-                << "Total Value: $"<< nameValue << endl;
-      outStream.close();
-}
 
 /* Keeps track of entire stocks value */
     totalValue = nameValue + totalValue;
